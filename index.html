@@ -1,24 +1,211 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Jebarson Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jebarson | Embedded Systems & IoT</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#0f172a;
+color:white;
+line-height:1.6;
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+background:linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+header h1{
+font-size:3rem;
+}
+
+header p{
+font-size:1.2rem;
+margin-top:10px;
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 25px;
+background:white;
+color:#2563eb;
+text-decoration:none;
+border-radius:25px;
+font-weight:bold;
+}
+
+section{
+padding:60px 10%;
+}
+
+h2{
+margin-bottom:20px;
+color:#38bdf8;
+}
+
+.card-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+}
+
+.skill{
+background:#2563eb;
+padding:10px 15px;
+border-radius:20px;
+}
+
+footer{
+text-align:center;
+padding:30px;
+background:#020617;
+}
+</style>
 </head>
+
 <body>
-    <h1>Jebarson</h1>
-    <h2>Embedded Systems & IoT Enthusiast</h2>
 
-    <h3>About Me</h3>
-    <p>Computer and Communication Engineering student interested in Embedded Systems, IoT, ESP32 and Arduino projects.</p>
+<header>
+<h1>Jebarson</h1>
+<p>Embedded Systems & IoT Enthusiast</p>
+<p>Computer and Communication Engineering Student</p>
 
-    <h3>Projects</h3>
-    <ul>
-        <li>Smart Irrigation System</li>
-        <li>Microplastics Detection System</li>
-        <li>ESP32 Wireless Game Controller</li>
-        <li>Edutrack Student Management System</li>
-    </ul>
+<a href="#projects" class="btn">View My Projects</a>
+</header>
 
-    <h3>Contact</h3>
-    <p>Email: yourmail@example.com</p>
+<section>
+<h2>About Me</h2>
+
+<p>
+I am a Computer and Communication Engineering student passionate about
+Embedded Systems, IoT, ESP32, Arduino, Computer Vision and Real-Time Systems.
+I enjoy building innovative projects that solve real-world problems using
+hardware and software integration.
+</p>
+
+</section>
+
+<section>
+<h2>Technical Skills</h2>
+
+<div class="skills">
+<div class="skill">C</div>
+<div class="skill">C++</div>
+<div class="skill">Python</div>
+<div class="skill">ESP32</div>
+<div class="skill">ESP32-S3</div>
+<div class="skill">Arduino</div>
+<div class="skill">IoT</div>
+<div class="skill">OpenCV</div>
+<div class="skill">Embedded Systems</div>
+<div class="skill">Computer Vision</div>
+<div class="skill">GitHub</div>
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Featured Projects</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Smart Irrigation System</h3>
+<p>
+ESP32 based smart farming solution with soil moisture monitoring,
+automatic irrigation and plant health management.
+</p>
+</div>
+
+<div class="card">
+<h3>Microplastics Detection System</h3>
+<p>
+Detection of plastic particles in water using ESP32-CAM,
+OpenCV, Rhodamine-B and image processing techniques.
+</p>
+</div>
+
+<div class="card">
+<h3>ESP32 Wireless Game Controller</h3>
+<p>
+Custom wireless controller developed using ESP32 with
+real-time communication for gaming applications.
+</p>
+</div>
+
+<div class="card">
+<h3>Face Detection Video Controller</h3>
+<p>
+AI-powered attention monitoring system that automatically
+controls video playback based on face detection.
+</p>
+</div>
+
+<div class="card">
+<h3>Edutrack</h3>
+<p>
+Student management system for attendance, marks,
+behaviour tracking and report generation.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Education</h2>
+
+<p>
+Bachelor of Engineering<br>
+Computer and Communication Engineering (CCE)
+</p>
+
+</section>
+
+<section>
+
+<h2>Contact</h2>
+
+<p>Email: your-email@example.com</p>
+<p>LinkedIn: Add your LinkedIn URL</p>
+<p>GitHub: https://github.com/Jebarson7</p>
+
+</section>
+
+<footer>
+<p>© 2026 Jebarson | Embedded Systems & IoT Portfolio</p>
+</footer>
+
 </body>
 </html>
