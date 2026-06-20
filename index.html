@@ -3,329 +3,790 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jebarson | Embedded Systems & IoT</title>
+
+<title>Jebarson E | Portfolio</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#050816;
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#0a192f;
     color:white;
+    line-height:1.6;
 }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
-    background:#081020;
+/* NAVIGATION */
+
+nav{
+    background:#112240;
+    padding:18px;
+    text-align:center;
     position:sticky;
     top:0;
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#00c6ff;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,0.5);
 }
 
 nav a{
-    color:white;
+    color:#64ffda;
     text-decoration:none;
-    margin-left:20px;
+    margin:15px;
+    font-weight:bold;
+    transition:0.3s;
 }
 
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:80px 10%;
-    flex-wrap:wrap;
+nav a:hover{
+    color:white;
+    text-shadow:0 0 10px #64ffda;
 }
 
-.hero-text{
-    max-width:600px;
+/* HEADER */
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    animation:slideDown 1s ease;
 }
 
-.hero h1{
-    font-size:60px;
-    margin:10px 0;
+.profile-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:4px solid #64ffda;
+    object-fit:cover;
+    transition:0.4s;
 }
 
-.hero h2{
-    color:#00c6ff;
-    margin-bottom:20px;
+.profile-img:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 30px rgba(100,255,218,0.8);
 }
 
-.hero p{
-    line-height:1.8;
+.tagline{
+    color:#64ffda;
 }
+
+/* BUTTONS */
 
 .btn{
     display:inline-block;
-    margin-top:25px;
-    padding:12px 25px;
-    background:#00c6ff;
-    color:black;
-    border-radius:8px;
+    padding:12px 20px;
+    margin:10px;
+    background:#64ffda;
+    color:#0a192f;
     text-decoration:none;
+    border-radius:8px;
     font-weight:bold;
+    transition:all 0.3s ease;
 }
 
-.profile{
-    width:280px;
-    height:280px;
-    border-radius:50%;
-    border:4px solid #00c6ff;
-    object-fit:cover;
+.btn:hover{
+    background:white;
+    transform:translateY(-4px) scale(1.05);
+    box-shadow:0 0 20px rgba(100,255,218,0.6);
 }
+
+/* SECTIONS */
 
 section{
-    padding:70px 10%;
+    padding:60px 8%;
 }
 
-.section-title{
-    font-size:35px;
-    color:#00c6ff;
-    margin-bottom:30px;
-}
-
-.card{
-    background:#0d1325;
-    padding:25px;
-    border-radius:15px;
+section:not(:last-child){
     margin-bottom:20px;
 }
 
-.skills{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
+h2{
+    color:#64ffda;
 }
 
-.skill{
-    background:#101a33;
-    padding:15px;
-    text-align:center;
-    border-radius:10px;
-}
+/* CARDS */
 
-.projects{
+.card-container{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:20px;
 }
 
-.project{
-    background:#0d1325;
-    border-radius:15px;
-    overflow:hidden;
-}
-
-.project img{
-    width:100%;
-    height:180px;
-    object-fit:cover;
-}
-
-.project-content{
+.card{
+    background:#112240;
     padding:20px;
+    border-radius:15px;
+    transition:0.4s;
+    border:1px solid rgba(100,255,218,0.2);
 }
+
+.card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 0 30px rgba(100,255,218,0.6);
+}
+
+.project-img{
+    width:100%;
+    border-radius:10px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    border-left:3px solid #64ffda;
+    padding-left:20px;
+}
+
+/* CONTACT */
+
+.contact .card{
+    text-align:center;
+}
+
+.contact .card h3{
+    color:#64ffda;
+    margin-bottom:10px;
+}
+
+.contact .card a{
+    color:white;
+    text-decoration:none;
+    word-break:break-word;
+    transition:0.3s;
+}
+
+.contact .card a:hover{
+    color:#64ffda;
+}
+
+/* FOOTER */
 
 footer{
     text-align:center;
-    padding:25px;
-    background:#081020;
+    padding:20px;
+    background:#112240;
 }
 
+/* MOBILE */
+
 @media(max-width:768px){
-.hero{
-    text-align:center;
+
+nav a{
+display:block;
+margin:10px;
 }
-.hero h1{
-    font-size:40px;
+
+.profile-img{
+width:140px;
+height:140px;
 }
-.profile{
-    margin-top:30px;
+
 }
+
+section{
+    animation:fadeInUp 1s ease;
 }
+
+@keyframes fadeInUp{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Main Section Headings */
+h2{
+    color:#64ffda;
+    font-size:38px;
+}
+
+/* Card Titles */
+.card h3{
+    color:#7ee787;
+    font-size:24px;
+    font-weight:bold;
+}
+
+/* Normal Text */
+.card p{
+    color:#ccd6f6;
+    font-size:17px;
+}
+
+/* About Me Paragraph */
+#about p{
+    color:#ccd6f6;
+    line-height:1.8;
+}
+
+#about .card{
+    margin-bottom:35px;
+}
+
+/* Header Name */
+header h1{
+    color:white;
+}
+
+/* Tagline */
+.tagline{
+    color:#64ffda;
+    font-weight:bold;
+}
+
+.sub-heading{
+    color:#7ee787;
+    font-size:28px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
 </style>
+
 </head>
 
 <body>
 
-<header>
-<div class="logo">JEBARSON</div>
+<!-- NAVBAR -->
 
 <nav>
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
 <a href="#projects">Projects</a>
+<a href="#internships">Internships</a>
+<a href="#certifications">Certifications</a>
+<a href="#achievements">Achievements</a>
 <a href="#contact">Contact</a>
 </nav>
+
+<!-- HEADER -->
+
+<header>
+
+<img src="jebarson-photo.jpeg"
+alt="Jebarson"
+class="profile-img">
+
+<h1>Jebarson E</h1>
+
+<h3 class="tagline">
+CCE Student | Embedded Systems & IoT Enthusiast
+</h3>
+
+<p>
+Passionate about Embedded Systems, IoT, Hardware Development,
+Microcontrollers and Real-World Engineering Solutions.
+</p>
+
+<a href="jebarson-resume.pdf"
+class="btn"
+download>
+Download Resume
+</a>
+
+<a href="https://www.linkedin.com/in/jebarson-e-770944322/"
+class="btn"
+target="_blank">
+LinkedIn
+</a>
+
+<a href="https://github.com/Jebarson7"
+class="btn"
+target="_blank">
+GitHub
+</a>
+
 </header>
 
-<section class="hero">
-
-<div class="hero-text">
-<h3>Hello, I'm</h3>
-<h1>Jebarson</h1>
-
-<h2>Embedded Systems & IoT Enthusiast</h2>
-
-<p>
-Computer and Communication Engineering student passionate about
-Embedded Systems, IoT, ESP32, Arduino and real-world automation projects.
-</p>
-
-<a href="#projects" class="btn">View Projects</a>
-<a href="resume.pdf" class="btn" target="_blank">Download Resume</a>
-</div>
-
-<!-- Replace profile.jpg with your image -->
-<img src="profile.jpg" class="profile">
-
-</section>
+<!-- ABOUT -->
 
 <section id="about">
-<h2 class="section-title">About Me</h2>
+
+<h2>About Me</h2>
 
 <div class="card">
+
 <p>
-I am a CCE student focused on Embedded Systems and IoT.
-I enjoy building innovative solutions using ESP32, sensors,
-computer vision and automation technologies.
+I am a Computer and Communication Engineering student passionate about Embedded Systems IoT and software development. I enjoy building innovative solutions using microcontrollers sensors and cloud technologies while continuously enhancing my technical and problem-solving skills.
 </p>
-<br>
-<p><strong>Department:</strong> Computer & Communication Engineering</p>
-<p><strong>Focus Area:</strong> Embedded Systems & IoT</p>
-<p><strong>Location:</strong> Tamil Nadu, India</p>
+
+</div>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Education</h3>
+<p>CCE Student</p>
+</div>
+
+<div class="card">
+<h3>Domain</h3>
+<p>Embedded Systems & IoT</p>
+</div>
+
+<div class="card">
+<h3>Projects</h3>
+<p>10+ Academic Projects</p>
+</div>
+
+<div class="card">
+<h3>Coding</h3>
+<p>1100+ Problems Solved</p>
+</div>
+
 </div>
 
 </section>
+
+<!-- SKILLS -->
 
 <section id="skills">
-<h2 class="section-title">Skills</h2>
 
-<div class="skills">
+<h2>Skills</h2>
 
-<div class="skill">C</div>
-<div class="skill">C++</div>
-<div class="skill">Python</div>
-<div class="skill">ESP32</div>
-<div class="skill">ESP32-S3</div>
-<div class="skill">Arduino</div>
-<div class="skill">OpenCV</div>
-<div class="skill">IoT</div>
-<div class="skill">MQTT</div>
-<div class="skill">GitHub</div>
-<div class="skill">VS Code</div>
+<div class="card-container">
+
+<div class="card">
+<h3>Embedded & IoT</h3>
+<p>Arduino, ESP32, Sensor Integration</p>
+</div>
+
+<div class="card">
+    <h3>Engineering Tools</h3>
+    <p>
+    Arduino IDE, Keil uVision, Proteus,
+    Wokwi, Tinkercad, Logisim, SciLab,
+    MySQL Workbench, MongoDB Compass
+    </p>
+</div>
+    
+<div class="card">
+<h3>Cloud Integration</h3>
+<p>Adafruit io, Thingspeak, Firebase, Ubidots, Node Red, Blynk IoT, Arduino Cloud</p>
+</div>
+    
+<div class="card">
+<h3>Programming</h3>
+<p>C, C++, Python, Java, MySQL, Embedded C, Assembly Level Program</p>
+</div>
+    
+<div class="card">
+    <h3>Development Tools</h3>
+    <p>
+    VS Code, IntelliJ IDEA, GitHub, Git Bash,
+    Postman, Spring Boot
+    </p>
+</div>
 
 </div>
+
 </section>
+
+<!-- PROJECTS -->
 
 <section id="projects">
 
-<h2 class="section-title">Projects</h2>
+<h2>Featured Projects</h2>
 
-<div class="projects">
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1589923188900-85dae523342b">
-<div class="project-content">
-<h3>Smart Irrigation System</h3>
-<p>ESP32 based automated irrigation and plant monitoring system.</p>
-</div>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3">
-<div class="project-content">
-<h3>Microplastics Detection System</h3>
 <p>
-ESP32-CAM and OpenCV based solution for detecting microplastic particles in water using Rhodamine B staining and image processing techniques.
+Some of my key projects in Embedded Systems, IoT, AI and Software Development.
 </p>
-<a href="https://www.linkedin.com/posts/jebarson-e-770944322_embeddedsystems-iot-esp32cam-ugcPost-7470862165143379970-G_RF/?utm_source=share&utm_medium=member_android&rcm=ACoAAFGnL0QBdxWy0GK2DbjtAqr74YE9hUESMJE" target="_blank" class="btn">
-Watch Demo
-</a>
-</div>
-</div>
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3">
-<div class="project-content">
-<h3>ESP32 Wireless Controller</h3>
-<p>Custom wireless game controller using ESP32.</p>
-<a href="https://www.linkedin.com/posts/jebarson-e-770944322_esp32-embeddedsystems-iot-ugcPost-7470092345670164480-1-VA/?utm_source=share&utm_medium=member_android&rcm=ACoAAFGnL0QBdxWy0GK2DbjtAqr74YE9hUESMJE"
-target="_blank"
-class="btn">
-Watch Demo
-</a>
-</div>
-</div>
+<div class="card-container">
 
-<div class="project">
-<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
-<div class="project-content">
-<h3>Face Detection Video Controller</h3>
-<p>Computer vision based smart video playback system.</p>
-</div>
-</div>
-
-<div class="project">
-<img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7">
-<div class="project-content">
-<h3>Wi-Fi Controlled Smart Car</h3>
+<div class="card">
+<h3>🌱 AI-Powered Smart Irrigation & Plant Disease Detection</h3>
 <p>
-ESP8266-based Wi-Fi controlled robotic car with wireless navigation and real-time control through a smartphone or web interface.
+Developed an intelligent agriculture solution using ESP32, sensors, IoT monitoring and AI-based disease detection.
 </p>
-<a href="https://www.linkedin.com/posts/jebarson-e-770944322_iot-robotics-esp8266-activity-7423432953621569536-3kvx?utm_source=share&utm_medium=member_android&rcm=ACoAAFGnL0QBdxWy0GK2DbjtAqr74YE9hUESMJE"
-target="_blank"
-class="btn">
-Watch Demo
+</div>
+
+<div class="card">
+<h3>📡 Missile Defense Radar System</h3>
+<p>
+Built an Arduino-based radar system for real-time object detection and visualization.
+</p>
+</div>
+
+<div class="card">
+<h3>🔐 Military Secure Communication Terminal</h3>
+<p>
+Designed a secure communication system using Morse Code transmission with real-time environmental monitoring and emergency alert features.
+</p>
+</div>
+
+<div class="card">
+<h3>🔬 Microplastics Detection System</h3>
+<p>
+Developed a system using ESP32-CAM and OpenCV for detecting microplastic contamination in water.
+</p>
+</div>
+
+</div>
+
+<br>
+
+<center>
+<a href="projects.html" class="btn">
+View All Projects
 </a>
-
-</div>
-</div>
-
-</div>
+</center>
 
 </section>
 
-<section id="contact">
 
-<h2 class="section-title">Contact</h2>
+<!-- INTERNSHIPS -->
+
+<section id="internships">
+
+<h2>Internships</h2>
+
+<div class="timeline">
 
 <div class="card">
 
-<p>Email: yourmail@gmail.com</p>
-<br>
+<h3>
+Tektork Private Limited
+</h3>
 
-<p>LinkedIn:
-<a href="https://www.linkedin.com/in/jebarson-e-770944322" style="color:#00c6ff;" target="_blank">
-Connect on LinkedIn
-</a>
+<p>
+Embedded Systems & IoT Intern (Current)
 </p>
 
+</div>
+
 <br>
 
-<p>GitHub:
-<a href="https://github.com/Jebarson7" style="color:#00c6ff;" target="_blank">
-My GitHub Profile
-</a>
+<div class="card">
+
+<h3>
+NIELIT Calicut
+</h3>
+
+<p>
+Completed Winter Internship in Embedded Systems and IoT with hands-on experience in Embedded C, Sensor Interfacing and IoT Applications.
 </p>
+
+<a href="nielit-certificate.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+
+<a href="nielit-certificate.pdf"
+class="btn"
+download>
+Download
+</a>
+
+</div>
 
 </div>
 
 </section>
 
+<section id="certifications">
+
+<h2>Certifications</h2>
+
+<h3 class="sub-heading">Courses & Certifications</h3>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Signals and System Course from Scratch</h3>
+    
+<p>Tutorialspoint</p>
+    
+<a href="signals.pdf" class="btn" target="_blank">
+View
+</a>
+
+<a href="signals.pdf" class="btn" download>
+Download
+</a>
+    
+</div>
+
+<div class="card">
+<h3>C Training</h3>
+
+<p>IIT Bombay</p>
+
+<a href="c-training.pdf" class="btn" target="_blank">
+View
+</a>
+
+<a href="c-training.pdf" class="btn" download>
+Download
+</a>
+
+</div>
+
+<div class="card">
+<h3>CPP Training</h3>
+
+<p>IIT Bombay</p>
+
+<a href="cpp-training.pdf" class="btn" target="_blank">
+View
+</a>
+
+<a href="cpp-training.pdf" class="btn" download>
+Download
+</a>
+
+</div>
+
+<div class="card">
+<h3>DSA in C/C++</h3>
+
+<p>Udemy</p>
+
+<a href="dsa-cpp.pdf" class="btn" target="_blank">
+View
+</a>
+
+<a href="dsa-cpp.pdf" class="btn" download>
+Download
+</a>
+
+</div>
+
+</div>
+
+<br><br>
+
+<center>
+<a href="certifications.html" class="btn">
+View All Certificates
+</a>
+</center>
+
+<h3 class="sub-heading">Competitions & Participation</h3>
+
+<div class="card-container">
+
+<div class="card">
+
+<h3>Advanced IoT and its Application</h3>
+
+<p>
+Tektork Workshop
+</p>
+
+<a href="advanced-iot-tektork.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+
+<a href="advanced-iot-tektork.pdf"
+class="btn"
+download>
+Download
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>Unnovations'25</h3>
+
+<p>
+Innovation and Technology Event
+</p>
+
+<a href="unnovations-25.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+
+<a href="unnovations-25.pdf"
+class="btn"
+download>
+Download
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>FixForward Ideathon 2026</h3>
+
+<p>
+Ideathon and Problem Solving Competition
+</p>
+
+<a href="fixforward-ideathon-2026.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+
+<a href="fixforward-ideathon-2026.pdf"
+class="btn"
+download>
+Download
+</a>
+
+</div>
+
+</div>
+
+<br>
+
+<center>
+<a href="participation.html" class="btn">
+View Participation Certificates
+</a>
+</center>
+    
+</section>
+
+<!-- ACHIEVEMENTS -->
+
+<section id="achievements">
+
+<h2>Achievements</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Freshathon - 2nd Runner-Up</h3>
+
+<p>
+Secured 2nd Runner-Up for developing the Missile Defense Radar System, showcasing embedded systems and sensor integration skills.
+</p>
+
+<a href="freshathon-certificate.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+
+</div>
+
+<div class="card">
+<h3>CreateX - Finalist</h3>
+    
+<p>
+Selected as a finalist for developing the "Microplastic Detection in Water" system, showcasing innovation in image processing and environmental monitoring technologies.
+</p>
+
+<a href="createx-certificate.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+    
+</div>
+
+<div class="card">
+<h3>Technovation - Finalist</h3>
+    
+<p>
+Recognized as a finalist for presenting the "Microplastic Detection in Water" project, demonstrating expertise in sustainable technology solutions and water quality assessment.
+</p>
+
+<a href="technovation-certificate.pdf"
+class="btn"
+target="_blank">
+View
+</a>
+    
+</div>
+
+<div class="card">
+<h3>1100+ Coding Problems Solved</h3>
+<p>
+Solved over 1100 coding problems across various platforms, strengthening problem-solving, logical thinking and programming skills.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2>Get In Touch</h2>
+
+<p>
+Feel free to connect with me for collaborations, internships, projects or opportunities in Embedded Systems, IoT and Software Development.
+</p>
+
+<div class="card-container">
+
+<div class="card">
+<h3>Email</h3>
+<p>
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=shanthinipanjalingam3010@gmail.com" target="_blank">
+    shanthinipanjalingam3010@gmail.com
+</a>
+</p>
+</div>
+
+<div class="card">
+<h3>Phone</h3>
+<p>
+<a href="tel:+918526753012">
++91 85267 53012
+</a>
+</p>
+</div>
+
+<div class="card">
+<h3>LinkedIn</h3>
+<p>
+<a href="https://www.linkedin.com/in/shanthini-p-980b34324/"
+target="_blank">
+linkedin.com/in/shanthini-p
+</a>
+</p>
+</div>
+
+<div class="card">
+<h3>GitHub</h3>
+<p>
+<a href="https://github.com/shanthini3010"
+target="_blank">
+github.com/shanthini3010
+</a>
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-© 2026 Jebarson | Embedded Systems & IoT Portfolio
+
+<p>
+© 2026 Shanthini P | Embedded Systems & IoT Portfolio
+</p>
+
 </footer>
 
 </body>
